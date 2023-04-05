@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Calculatrice</title>
+  <link rel="stylesheet" type="text/css" href="STYL.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="javascript.js"></script>
+  <style>
+    #history-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    #history {
+      background-color: #e4e0e0;
+    }
+
+    #calculator-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    body {
+      background-image: url('./fond.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="calculator-container" class="calculator">
+    <form action="calculate.php" method="POST">
+      <h3> Calculatrice de karim&#10024; </h3>
+      <input type="text" id="display" name="expression" readonly>
+      <br>
+      <input type="button" value="C" onclick="clearDisplay()">
+      <input type="button" value="/" onclick="updateDisplay('/')">
+      <input type="button" value="*" onclick="updateDisplay('*')">
+      <input type="button" value="-" onclick="updateDisplay('-')">
+      <br>
+      <input type="button" value="1" onclick="updateDisplay('1')">
+      <input type="button" value="2" onclick="updateDisplay('2')">
+      <input type="button" value="3" onclick="updateDisplay('3')">
+      <input type="button" value="+" onclick="updateDisplay('+')">
+      <br>
+      <input type="button" value="4" onclick="updateDisplay('4')">
+      <input type="button" value="5" onclick="updateDisplay('5')">
+      <input type="button" value="6" onclick="updateDisplay('6')">
+      <input type="button" value="." onclick="updateDisplay('.')">
+
+      <br>
+      <input type="button" value="7" onclick="updateDisplay('7')">
+      <input type="button" value="8" onclick="updateDisplay('8')">
+      <input type="button" value="9" onclick="updateDisplay('9')">
+      <input type="button" value="&#8634;" id="refresh-button" onclick="displayHistory()">
+      <br>
+      <input type="button" value='(' onclick="updateDisplay('(')">
+      <input type="button" value=')' onclick="updateDisplay(')')">
+      <input type="button" value="0" onclick="updateDisplay('0')">
+      <input type="button" value="&#8595;" onclick="showHistory()">
+      <input type="button" value="=" name="equals" onclick="calculate()" style="width: 91%;">
+      <br>
+    </form>
+  </div>
+  <div id="history-container">
+    <h4>Historique&#128526;</h4>
+    <textarea id="history" rows="4" cols="25" readonly style="width: 250px; height: 100px;"></textarea>
+  </div>
+</body>
+
+</html>

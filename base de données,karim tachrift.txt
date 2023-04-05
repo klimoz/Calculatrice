@@ -1,0 +1,14 @@
+CREATE DATABASE calculatrice;
+
+CREATE TABLE calculatrice.calculations (
+  id INT NOT NULL AUTO_INCREMENT,
+  operation VARCHAR(255) NOT NULL,
+  result VARCHAR(255) NOT NULL,
+  date_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
+
+
+
+CREATE USER 'karim'@'localhost' IDENTIFIED BY 'karim1';
+GRANT ALL PRIVILEGES ON *.* TO 'karim'@'localhost' WITH GRANT OPTION;
